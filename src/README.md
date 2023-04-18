@@ -89,7 +89,13 @@ START:
                     add_to_favorites(pokemon)
             ELSE:
                 PRINT "Pokemon not found."
-                ```
+```
+
 ## <u>Wireframes</u> ##
 
-Look at the wireframes I made for my project.
+Here are the wireframes I made for my project.
+
+### <u>Low fidelity wireframe:</u> ###
+![alt text](Group%201.png)
+![alt text](Group%202.png)
+![alt text](Group%203.png)
