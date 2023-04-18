@@ -15,9 +15,9 @@ function PokemonDetails({ pokemon }) {
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`}
         alt={name}
       />
+      <p>Type: {capitalizedType}</p>
       <p>Height: {feet} ft {inches} in</p>
       <p>Weight: {pounds} lbs</p>
-      <p>Type: {capitalizedType}</p>
       <p>Description: {description}</p>
     </div>
   );

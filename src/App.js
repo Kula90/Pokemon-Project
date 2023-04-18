@@ -37,7 +37,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Pokemon Search</h1>
+      <h1><u>Pokédex</u></h1>
       <SearchBar
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
