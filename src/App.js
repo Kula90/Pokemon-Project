@@ -2,11 +2,16 @@ import React, { useState } from 'react';
 import './App.css';
 import SearchBar from './SearchBar';
 import PokemonDetails from './PokemonDetails';
+import pokedexLogo from './icons/Pokédex_logo.png';
+import favouritePokemonIcon from './icons/PokemonFavoriteIcon.png';
 
 function App() {
   
   const [pokemon, setPokemon] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [favorites, setFavorites] = useState([]);
+
+
 
   const search = async () => {
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${searchQuery.toLowerCase()}`);
@@ -35,18 +40,57 @@ function App() {
     }
   };
 
+  const addToFavorites = () => {
+    if (pokemon) {
+      const alreadyFavorited = favorites.some((favorite) => favorite.id === pokemon.id);
+      if (!alreadyFavorited) {
+        setFavorites((prevState) => [...prevState, pokemon]);
+      }
+    }
+  };
+
+  const removeFromFavorites = (id) => {
+    setFavorites((prevState) => prevState.filter((favorite) => favorite.id !== id));
+  };
+
   return (
     <div className="App">
-      <h1><u>Pokédex</u></h1>
+      <h1>
+      <img src={pokedexLogo} alt="Pokedex logo" />
+      </h1>
+
       <SearchBar
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
         handleKeyPress={handleKeyPress}
         search={search}
       />
-      {pokemon && <PokemonDetails pokemon={pokemon} />}
-    </div>
-  );
+      {pokemon && ( 
+        <div> <PokemonDetails pokemon={pokemon} />
+          <a href="#" onClick={addToFavorites}>
+            <img src={favouritePokemonIcon} alt="Add to Favorites" />
+          </a>
+        </div>
+      )}
+        <div>
+          <h3>Favorites:</h3>
+          <ul>
+            {favorites.map((favorite) => (
+              <li key={favorite.id}>
+                {favorite.name}{' '}
+
+                <a href="#" onClick={removeFromFavorites}>
+<img src=''
+
+                <button onClick={() => removeFromFavorites(favorite.id)}>Remove</button>
+
+
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    );
 }
 
 export default App;

@@ -96,6 +96,6 @@ START:
 Here are the wireframes I made for my project.
 
 ### <u>Low fidelity wireframe:</u> ###
-![alt text](Group%201.png)
-![alt text](Group%202.png)
-![alt text](Group%203.png)
+![alt text](./Wireframes/Group%201.png)
+![alt text](./Wireframes/Group%202.png)
+![alt text](./Wireframes/Group%203.png)

@@ -1,9 +1,48 @@
-/*./App.js*/
-
 .App {
   text-align: center;
+  /* background-color: #E8092F; */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #E8092F;
 }
 
 ::placeholder {
   opacity: 0.5;
 }
+
+a img {
+  width: 30px;
+  height: 30px;
+}
+
+
+.favorites {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.favorites ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.favorites li {
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+
+/* h1{
+} */
+
+
+
