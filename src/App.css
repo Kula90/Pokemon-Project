@@ -1,48 +1,92 @@
-.App {
-  text-align: center;
-  /* background-color: #E8092F; */
-}
-
+/*=============================*/
 body {
   margin: 0;
   padding: 0;
   background-color: #E8092F;
+}
+/*=============================*/
+
+
+
+
+/*=============================*/
+/* .App {
+  
+} */
+/*=============================*/
+
+
+
+/*=============================*/
+.pokedexSearchBar{
+  background-color:#E8092F;
+  justify-content: center;
+  text-align: center;
+
+}
+
+.pokedexLogo {
+  caret-color: transparent;
+}
+
+/* .SearchBar {
+} */
+/*=============================*/
+
+.PokemonDetailsFavButt {
+  background-color: #E8092F;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  margin: 10px;
+  caret-color: transparent;
+}
+
+.PokemonDetails {
+  margin: 10px;
+}
+
+.PokemonDetails-img {
+  width: 200px;
+  height: 200px;
+  /* margin-bottom: 1rem; */
+}
+
+/* .addToFavorites {
+} */
+/*=============================*/
+
+
+
+/*=============================*/
+.MakeAPokemon {
+  background-color: brown;
+
+}
+/*=============================*/
+
+
+
+
+
+
+
+
+
+a img {
+  width: 25px;
+  height: 25px;
+}
+
+.logo {
+  width: 200px;
+  height: 80px;
 }
 
 ::placeholder {
   opacity: 0.5;
 }
 
-a img {
-  width: 30px;
-  height: 30px;
+ul {
+  list-style-type: none;
 }
-
-
-.favorites {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 10px;
-  padding: 10px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.favorites ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.favorites li {
-  margin: 0 0 10px 0;
-  padding: 0;
-}
-
-
-/* h1{
-} */
-
-
-

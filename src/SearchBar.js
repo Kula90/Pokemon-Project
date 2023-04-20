@@ -1,6 +1,7 @@
+import './App.css';
 import React from 'react';
 
-function SearchBar({ searchQuery, setSearchQuery, handleKeyPress, search }) {
+function SearchBar({ searchQuery, setSearchQuery, search }) {
   return (
     <div>
       <input
