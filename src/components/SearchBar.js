@@ -1,7 +1,9 @@
-import './App.css';
+import '/root/sei/projects/pokemon-project/src/App.css';
 import React from 'react';
 
+// SearchBar component that takes in three props: searchQuery, setSearchQuery, and search.
 function SearchBar({ searchQuery, setSearchQuery, search }) {
+  // The component returns a div containing an input and a button.
   return (
     <div>
       <input
@@ -16,6 +18,7 @@ function SearchBar({ searchQuery, setSearchQuery, search }) {
 }
 
 export default SearchBar;
+
 
 
 
