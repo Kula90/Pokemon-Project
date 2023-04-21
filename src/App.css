@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #E8092F;
+  background-color: #d4072a;
 }
 /*=============================*/
 
@@ -16,7 +16,7 @@ body {
 
 /*=============================*/
 .pokedexSearchBar{
-  background-color:#E8092F;
+  background-color:#d4072a;
   justify-content: center;
   text-align: center;
 
@@ -31,7 +31,7 @@ body {
 /*=============================*/
 
 .PokemonDetailsFavButt {
-  background-color: #E8092F;
+  background-color: #d4072a;
   display: flex;
   flex-direction: column;
   align-items: center;

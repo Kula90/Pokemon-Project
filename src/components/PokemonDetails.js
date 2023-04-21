@@ -17,6 +17,13 @@ function PokemonDetails({ pokemon, favorites, toggleAllFavorites, toggleFavorite
   // Capitalize the first letter of the type
   const capitalizedType = type.charAt(0).toUpperCase() + type.slice(1);
 
+// Define a function to remove all favorites
+  const removeAllFavorites = () => {
+    toggleAllFavorites([]);
+    localStorage.setItem('favorites', JSON.stringify([]));
+  };
+
+
   // Define a function to remove selected favorites
   const removeSelectedFavorites = () => {
     // Filter the favorites list to only include checked favorites
@@ -34,18 +41,22 @@ function PokemonDetails({ pokemon, favorites, toggleAllFavorites, toggleFavorite
   
       <div className="circle">
         <p><strong>Type:</strong> {capitalizedType}</p>
-        <p><strong>Height:</strong> {feet} ft {inches} in</p>
+        <p><strong>Height:</strong> {feet} ft {inches} in</p> 
         <p><strong>Weight:</strong> {pounds} lbs</p>
         <p><strong>Description:</strong> {description}</p>
       </div>
   
-      {favorites.length > 0 && (
+      {favorites.length > 0 && ( 
         <div>
           <h3>Favorites:</h3>
           
           <button onClick={toggleAllFavorites}>Select All</button>
           
           <button onClick={removeSelectedFavorites}>Remove Selected</button>
+
+          <button onClick={removeAllFavorites}>Remove All Favorites</button>
+
+
           <ul>
             
             {favorites.map((favorite) => (

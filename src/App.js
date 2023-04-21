@@ -8,14 +8,15 @@ import favoritePokemonIcon from './icons/PokemonFavoriteIcon.png';  // Importing
 import CreatePokemonForm from './components/CreatePokemonForm';  // Importing CreatePokemonForm component
 import api from './components/api';  // Importing api module
 
+
 // Defining the main component of the application
 function App() {
 
 // Defining initial states using the useState hook
-  const [pokemon, setPokemon] = useState(null);  // Initializing the state of "pokemon" to null using useState hook
-  const [searchQuery, setSearchQuery] = useState('');  // Initializing the state of "searchQuery" to an empty string using useState hook
+  const [pokemon, setPokemon] = useState(null);  // storing the current Pokemon data, which we initialize as null.
+  const [searchQuery, setSearchQuery] = useState('');  // storing the current search query, which we initialize as an empty string.
   const [favorites, setFavorites] = useState(
-    JSON.parse(localStorage.getItem("favorites")) || []  // Initializing the state of "favorites" using useState hook, with a default value of an empty array if no favorites are stored in local storage
+    JSON.parse(localStorage.getItem("favorites")) || []  // storing the list of user-favorited Pokemon, which we initialize with any favorites stored in local storage or an empty array.
   );
 
 

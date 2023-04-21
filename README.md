@@ -8,11 +8,23 @@ To do this, I'll need to use a dataset that has information about all the differ
 
 Overall, I'm making a really cool website that lets people interact with Pokemon data in a fun and user-friendly way!
 
+## <u> User stories <u> ##
+
+As a user of the Pokédex app, I want to be able to search for Pokémon by their name or Pokédex number, so that I can easily access their information and learn more about them.
+
+As a user, I also want the app to display each Pokémon's name, image, weight, height, and description, so that I can easily visualize and learn about their characteristics.
+
+As a user, I want the ability to add my favorite Pokémon to a favorites section within the app, so that I can easily access and review information about them whenever I want.
+
+As a user, I want the ability to create my own Pokémon and add them to my collection within the app. This feature should allow me to select the Pokémon's name, type, image, weight, height, and description, so that I can customize the characteristics of my own unique Pokémon.
+
+As a user, I expect the app to be user-friendly and intuitive, with a simple interface that is easy to navigate and use.
+
 ## <u>Deployment link</u> ##
 
 The Project is now live and can be accessed without any specific requirements.
 
-<li>Git repository:<mark>LINK HERE</mark></li>
+<li>Git repository: https://github.com/Kula90/Pokemon-Project</li>
 <li>Pokemon-Pokedex-Project:<mark>LINK HERE</mark></li>
 
 ## <u>Installation</u> ##
@@ -96,6 +108,6 @@ START:
 Here are the wireframes I made for my project.
 
 ### <u>Low fidelity wireframe:</u> ###
-![alt text](./Wireframes/Group%201.png)
-![alt text](./Wireframes/Group%202.png)
-![alt text](./Wireframes/Group%203.png)
+![alt text](./src/Wireframes/Group%201.png)
+![alt text](./src/Wireframes/Group%202.png)
+![alt text](./src/Wireframes/Group%203.png)
