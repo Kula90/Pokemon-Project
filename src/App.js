@@ -37,10 +37,25 @@ const handleKeyPress = (event) => {  // Declaring a function called "handleKeyPr
 // Function that adds a Pokemon to favorites
 const addToFavorites = async () => {  // Declaring an async function called "addToFavorites"
 if (pokemon) {  // If "pokemon" state exists...
+  const isCreatedPokemon = pokemon.id > 800; // Check whether the current Pokemon is created using the CreatePokemonForm
   const alreadyFavorited = favorites.some(
     (favorite) => favorite.id === pokemon.id
   );  // Check if the current "pokemon" state is already in the "favorites" state
   if (!alreadyFavorited) {  // If it's not already favorited...
+    if (isCreatedPokemon) {
+      const newFavorite = {
+        id: pokemon.id,
+        name: pokemon.name,
+        type: pokemon.type,
+        description: pokemon.description,
+        height: pokemon.height,
+        weight: pokemon.weight,
+        imageUrl: pokemon.imageUrl,
+      };  // Create a new favorite object with the data entered in the CreatePokemonForm
+      const updatedFavorites = [...favorites, newFavorite];  // Add the new favorite to the "favorites" array using the spread operator
+      setFavorites(updatedFavorites);  // Update the "favorites" state with the new array
+      localStorage.setItem('favorites', JSON.stringify(updatedFavorites));  // Store the updated "favorites" array in local storage
+    } else {
     const response = await fetch(
       `https://pokeapi.co/api/v2/pokemon/${pokemon.id}`);  // Fetch data for the current "pokemon" using the PokeAPI
     const data = await response.json();  // Convert the response to JSON
@@ -51,8 +66,8 @@ if (pokemon) {  // If "pokemon" state exists...
     localStorage.setItem('favorites', JSON.stringify(updatedFavorites));  // Store the updated "favorites" array in local storage
   }
  }
+}
 };
-
 
 
 // Function that removes a Pokemon from favorites
@@ -140,6 +155,7 @@ return (
         toggleFavorite={toggleFavorite}
         removeFromFavorites={removeFromFavorites}
       />
+
 </div>
 <div className='addToFavorites'>
     <span>Add to Favorites:</span>
@@ -150,12 +166,12 @@ return (
 </div>
 )}
 
-
       <div className='MakeAPokemon'>
-          <p><strong><u>Make a Pokemon!</u></strong></p>
+          <span><strong><u>Make a Pokemon!</u></strong></span>
           <CreatePokemonForm onSubmit={handleSubmit} />
       </div>
   </div>
+
  );}
 
 export default App;

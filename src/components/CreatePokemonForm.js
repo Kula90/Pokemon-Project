@@ -8,6 +8,9 @@ function CreatePokemonForm({ onSubmit }) { // create functional component with o
   const [height, setHeight] = useState({ feet: 0, inches: 0 }); // create state variable for height object
   const [weight, setWeight] = useState(0); // create state variable for weight
   const [description, setDescription] = useState(''); // create state variable for description
+  const [image, setImage] = useState('');
+  
+  // const [isFavorite, setIsFavorite] = useState(false);
 
   const handleSubmit = (event) => { // create function to handle form submission
     event.preventDefault(); // prevent default form submission behavior
@@ -20,7 +23,20 @@ function CreatePokemonForm({ onSubmit }) { // create functional component with o
     setHeight({ feet: 0, inches: 0 }); // reset height state variable to object with 0 feet and 0 inches
     setWeight(0); // reset weight state variable to 0
     setDescription(''); // reset description state variable to empty string
+    setImage('');
   };
+
+
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      setImage(reader.result);
+    };
+  };
+
+  
 
   return (
     <form onSubmit={handleSubmit}>
@@ -59,9 +75,10 @@ function CreatePokemonForm({ onSubmit }) { // create functional component with o
       <br />
 
       <label>
-        Height (ft, in):
+        Height (ft):
         <input type="number" value={height.feet} onChange={(event) => setHeight({ ...height, feet: parseInt(event.target.value) })} required />
-      <input type="number" value={height.inches} onChange={(event) => setHeight({ ...height, inches: parseInt(event.target.value) })} required />
+               (in):
+        <input type="number" value={height.inches} onChange={(event) => setHeight({ ...height, inches: parseInt(event.target.value) })} required />
     </label>
 
   <br />
@@ -77,6 +94,14 @@ function CreatePokemonForm({ onSubmit }) { // create functional component with o
       Description:
       <textarea value={description} onChange={(event) => setDescription(event.target.value)} required />
     </label>
+
+  <br />
+
+  <label>
+        Image:
+        <input type="file" onChange={handleImageChange} />
+
+  </label>
 
   <br />
 
