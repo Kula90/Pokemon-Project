@@ -1,71 +1,101 @@
-# Getting Started with Create React App
+# <u>Pokemon-Pokedex</u> #
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## <u>Description</u> ##
 
-## Available Scripts
+My Pokemon project involves creating an API using React that organizes a dataset of Pokemon. Basically, I'm making a website where people can search for their favorite Pokemon and save them to their favorites.
 
-In the project directory, you can run:
+To do this, I'll need to use a dataset that has information about all the different Pokemon, like their names, types, height, weight, and desciption. Then, I'll design an API that lets people search for Pokemon based on things like their name or type. I'll also create a way for people to save their favorite Pokemon so they can easily find them again later.
 
-### `npm start`
+Overall, I'm making a really cool website that lets people interact with Pokemon data in a fun and user-friendly way!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## <u>Deployment link</u> ##
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The Project is now live and can be accessed without any specific requirements.
 
-### `npm test`
+<li>Git repository:<mark>LINK HERE</mark></li>
+<li>Pokemon-Pokedex-Project:<mark>LINK HERE</mark></li>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## <u>Installation</u> ##
 
-### `npm run build`
+You don't need to install anything to use this app. All you need is a web browser that supports JavaScript and an internet connection.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## <u>Technologies used</u> ##
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<li> React </li>
+<li> CSS </li>
+<li> Javascript </li>
+<li> HTML </li>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## <u>Planning</u> ##
 
-### `npm run eject`
+Before diving into the design process of my project, I took some time to plan it out properly. To begin, I created a preliminary low-fidelity wireframe to sketch out a rough outline of the design. This allowed me to visualize the overall structure and layout of the game, which was essential for creating a clear vision of what the finished product would look like.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+I used multiple methods to plan out the structure and functionality of the API. One of these methods involved writing pseudocode, which helped me to outline andorganize the different components and functions of the API. By creating a structured representation of the code, I was able to better visualize how the various elements of the API would interact and work together.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+In addition to creating wireframes, utilizing pseudocode was an effective way for me to stay organized and focused throughout the development process. This technique helped me to track my progress, make any necessary adjustments, and ensure that the final product met the requirements and expectations. Ultimately, combining these planning techniques resulted in a more streamlined and efficient development process.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## <u>Pseudocode</u> ##
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Please take a look at the pseudocode I have created for my project.
+```js
+FUNCTION search_pokemon(pokedex, name):
+    FOR each pokemon in pokedex:
+        IF pokemon.name == name:
+            RETURN pokemon
+    RETURN null
 
-## Learn More
+FUNCTION add_to_favorites(pokemon):
+    ADD pokemon TO favorites_list
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+FUNCTION remove_from_favorites(pokemon):
+    REMOVE pokemon FROM favorites_list
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+FUNCTION display_pokemon_info(pokemon):
+    PRINT "Name: " + pokemon.name
+    PRINT "Type: " + pokemon.type
+    PRINT "Height: " + pokemon.height
+    PRINT "Weight: " + pokemon.weight
+    PRINT "Description: " + pokemon.description
 
-### Code Splitting
+FUNCTION generate_random_pokemon():
+    CREATE pokemon
+    SET pokemon.name = random_name
+    SET pokemon.type = random_type
+    SET pokemon.height = random_height
+    SET pokemon.weight = random_weight
+    SET pokemon.description = random_description
+    RETURN pokemon
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+START:
+    CREATE pokedex
+    CREATE favorites_list
+    WHILE true:
+        PRINT "Enter a Pokemon name to search, 'generate' for a random Pokemon:"
+        READ user_input
+        IF user_input == "generate":
+            pokemon = generate_random_pokemon()
+            display_pokemon_info(pokemon)
+            PRINT "Add to favorites? (y/n)"
+            READ add_favorite
+            IF add_favorite == "y":
+                add_to_favorites(pokemon)
+        ELSE:
+            pokemon = search_pokemon(pokedex, user_input)
+            IF pokemon != null:
+                display_pokemon_info(pokemon)
+                PRINT "Add to favorites? (y/n)"
+                READ add_favorite
+                IF add_favorite == "y":
+                    add_to_favorites(pokemon)
+            ELSE:
+                PRINT "Pokemon not found."
+```
 
-### Analyzing the Bundle Size
+## <u>Wireframes</u> ##
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Here are the wireframes I made for my project.
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# Pokemon-Project
+### <u>Low fidelity wireframe:</u> ###
+![alt text](./Wireframes/Group%201.png)
+![alt text](./Wireframes/Group%202.png)
+![alt text](./Wireframes/Group%203.png)
