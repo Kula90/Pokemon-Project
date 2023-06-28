@@ -7,6 +7,12 @@ import pokedexLogo from './icons/Pokédex_logo.png';  // Importing pokedexLogo i
 import favoritePokemonIcon from './icons/PokemonFavoriteIcon.png';  // Importing favoritePokemonIcon image
 import CreatePokemonForm from './components/CreatePokemonForm';  // Importing CreatePokemonForm component
 import api from './components/api';  // Importing api module
+import Navigation from './components/Navigation';
+import About from './components/About';
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+
+
 
 
 // Defining the main component of the application
@@ -125,7 +131,12 @@ const handleSubmit = (formData) => {
 
 // Rendering the UI components
 return (
+
 <div className='App'>
+  
+<div>
+      <Navigation />
+</div>
 
 <div className='pokedexSearchBar'>
 
@@ -146,7 +157,6 @@ return (
 </div>
 
   {pokemon && (
-
 <div className='PokemonDetailsFavButt'>
 <div className='PokemonDetails'>
       <PokemonDetails
@@ -156,7 +166,6 @@ return (
         toggleFavorite={toggleFavorite}
         removeFromFavorites={removeFromFavorites}
       />
-
 </div>
 <div className='addToFavorites'>
     <span>Add to Favorites:</span>
@@ -165,15 +174,15 @@ return (
       </a>
 </div>
 </div>
-)}
 
+)}
       <div className='MakeAPokemon'>
           <span><strong><u>Make a Pokemon!</u></strong></span>
           <CreatePokemonForm onSubmit={handleSubmit} />
       </div>
   </div>
-
  );}
+
 
 export default App;
 
